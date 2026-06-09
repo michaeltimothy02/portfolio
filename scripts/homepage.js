@@ -118,9 +118,47 @@ contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     const inputs = contactForm.querySelectorAll('input, textarea');
-    const [name, email, subject, message] = [...inputs].map(i => i.value);
+    const [name, email, subject, message] = [...inputs].map(i => i.value.trim());
 
-    btn.textContent = 'Sending...';
+    contactForm.querySelectorAll('.error-msg').forEach(el => el.remove());
+    contactForm.querySelectorAll('input, textarea').forEach(el => {
+        el.classList.remove('border-red-400');
+    });
+
+    const fields = [
+        { el: inputs[0], val: name, msg: 'Full name is required.' },
+        { el: inputs[1], val: email, msg: 'Email address is required.' },
+        { el: inputs[2], val: subject, msg: 'Subject is required.' },
+        { el: inputs[3], val: message, msg: 'Message is required.' },
+    ];
+
+    let hasError = false;
+    fields.forEach(({ el, val, msg }) => {
+        if (!val) {
+            el.classList.add('border-red-400');
+            const err = document.createElement('p');
+            err.className = 'error-msg text-red-500 text-xs mt-1';
+            err.textContent = msg;
+            el.parentElement.appendChild(err);
+            hasError = true;
+        }
+    });
+
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        inputs[1].classList.add('border-red-400');
+        const existing = inputs[1].parentElement.querySelector('.error-msg');
+        if (!existing) {
+            const err = document.createElement('p');
+            err.className = 'error-msg text-red-500 text-xs mt-1';
+            err.textContent = 'Please enter a valid email address.';
+            inputs[1].parentElement.appendChild(err);
+        }
+        hasError = true;
+    }
+
+    if (hasError) return; 
+
+    btn.innerHTML = 'Sending... <span class="material-symbols-outlined text-[18px]">hourglass_empty</span>';
     btn.disabled = true;
 
     const formData = new FormData();
@@ -135,11 +173,11 @@ contactForm.addEventListener('submit', async (e) => {
             mode: 'no-cors',
             body: formData
         });
-        btn.textContent = 'Message Sent ✓';
+        btn.innerHTML = 'Message Sent ✓';
         btn.style.background = '#356668';
         contactForm.reset();
     } catch {
-        btn.textContent = 'Failed. Try again.';
+        btn.innerHTML = 'Failed. Try again.';
         btn.disabled = false;
     }
 });
