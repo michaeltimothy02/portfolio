@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bite&amp;Brew Detail Project</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#2c3e50",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#4d453d",
+                        "on-primary-fixed-variant": "#36485b",
+                        "on-tertiary-container": "#b0a59a",
+                        "surface-bright": "#f8f9fa",
+                        "outline-variant": "#c4c6cd",
+                        "tertiary-fixed": "#ede0d4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d1c4b9",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed": "#002021",
+                        "primary": "#162839",
+                        "secondary": "#356668",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#2c261e",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "outline": "#74777d",
+                        "secondary-container": "#b9ecee",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#4e6073",
+                        "on-tertiary-fixed": "#211b13",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b5c8df",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#43474c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#96a9be",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#d1e4fb",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "on-secondary-container": "#3c6c6e",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#091d2e",
+                        "tertiary-container": "#433b33",
+                        "inverse-primary": "#b5c8df",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                        "3xl": "24px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/bitenbrew.css" />
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 h-20">
+        <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
+            <a class="font-headline-md text-headline-md text-primary tracking-tight" href="../pages/homepage.html">Michael Portfolio</a>
+            <div class="flex items-center gap-8">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block" href="../pages/homepage.html#projects">← All Projects</a>
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="dark-toggle">dark_mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <main class="pt-20">
+
+        <header class="max-w-3xl mx-auto px-6 pt-16 pb-12">
+            <div class="flex items-center gap-2 mb-8 text-on-surface-variant">
+                <a href="../pages/homepage.html#projects" class="font-label-md text-label-md hover:text-secondary transition-colors">Projects</a>
+                <span class="text-outline-variant">/</span>
+                <span class="font-label-md text-label-md text-on-surface">Bite&amp;Brew</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tag">UI/UX Design</span>
+                <span class="tag">Mobile App</span>
+                <span class="tag">Food & Beverage Recipe</span>
+            </div>
+
+            <h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                Bite&amp;Brew — Recipe App
+            </h1>
+
+            <div class="meta-row">
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">2 Weeks</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">UI Designer & UX Designer</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools/Tech</span>
+                    <span class="meta-value">Figma</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Platform</span>
+                    <span class="meta-value">iOS & Android</span>
+                </div>
+            </div>
+        </header>
+
+                <div class="hero-image-wrap">
+            <div class="hero-zoom-wrap">
+                <img src="../assets/images/bitenbrew1 (1).png" alt="Bite&amp;Brew Preview" class="hero-image hero-zoomable" />
+                <div class="hero-zoom-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click to enlarge
+                </div>
+            </div>
+        </div>
+
+        <article class="article-body">
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Overview</h2>
+                <p>Bite&amp;Brew is an HCI project focused on designing a user-friendly mobile application for exploring food and beverage recipes. The name Bite represents delicious food, while Brew symbolizes refreshing drinks, reflecting the app's goal of bringing both culinary experiences together in one simple and enjoyable platform.</p>
+            </section>
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Design Process</h2>
+                <p>The design process consisted of three stages: understanding user needs, organizing the app structure, and creating an interactive prototype.</p>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-marker">
+                            <span class="step-num">1</span>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content text-justify">
+                            <h3>Research & User Persona</h3>
+                            <p>Conducted a survey using Google Forms to understand user needs and preferences, then created user personas to guide the design process.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-marker">
+                            <span class="step-num">2</span>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content text-justify">
+                            <h3>Information Architecture (Sitemap)</h3>
+                            <p>Organized the app's page structure and navigation to ensure a clear and intuitive user experience.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-marker">
+                            <span class="step-num">3</span>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content text-justify">
+                            <h3>Prototyping</h3>
+                            <p>Created interactive designs and prototypes in Figma to visualize the user flow and overall experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Visual Language</h2>
+                <p>The visual direction is inspired by the warmth of coffee shops and home cooking. A combination of earthy brown, soft beige, warm gold, and dark charcoal creates a cozy and inviting experience for exploring food and beverage recipes.</p>
+
+                <div class="swatch-row">
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#6F4E37;"></div>
+                        <span class="swatch-name">Brown</span>
+                        <span class="swatch-hex">#6F4E37</span>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#F5F5DC;"></div>
+                        <span class="swatch-name">Beige</span>
+                        <span class="swatch-hex">#F5F5DC</span>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#D7A86E"></div>
+                        <span class="swatch-name">Gold</span>
+                        <span class="swatch-hex">#D7A86E</span>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#2B2B2B"></div>
+                        <span class="swatch-name">Charcoal</span>
+                        <span class="swatch-hex">#2B2B2B</span>
+                    </div>
+                </div>
+
+                <p>Typography uses <strong>Lora</strong> for the Bite &amp; Brew brand identity, giving the app an elegant and welcoming personality. <strong>Poppins</strong> is used throughout the interface to ensure clear readability and a modern user experience.</p>
+
+                <div class="type-specimen">
+                    <div class="type-row">
+                        <span class="type-sample-display">Bite&amp;Brew</span>
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@400;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
+                        <span class="type-meta">Lora · Logo</span>
+                    </div>
+                    <div class="type-row">
+                        <span class="type-sample-heading">Search & Explore Recipes</span>
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@400;600;700&family=Manrope:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+                        <span class="type-meta">Poppins · Heading</span>
+                    </div>
+                    <div class="type-row">
+                        <span class="type-sample-body">45 min · Easy · 400 Cal</span>
+                        <span class="type-meta">Poppins · Interface</span>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <div class="max-w-[680px] mx-auto px-6 reveal article-section" style="margin-bottom:0;">
+            <h2 class="section-heading">The Interface</h2>
+            <p>Six core screens represent the main user journey, guiding users from the splash screen all the way to exploring and viewing recipe details.</p>
+        </div>
+
+        <div class="carousel-wrapper reveal" style="margin-top: 32px;">
+    <p class="carousel-section-label">App Screens</p>
+
+    <div class="carousel-outer">
+        <button class="carousel-arrow carousel-arrow-left" id="arrow-left" aria-label="Previous">
+            <span class="material-symbols-outlined">arrow_back_ios</span>
+        </button>
+
+        <div class="carousel-card">
+            <div class="carousel-slides" id="interface-carousel">
+
+                <div class="carousel-slide active"
+                     data-label="Splash Screen"
+                     data-desc="Branded welcome screen that introduces Bite&Brew with a warm, elegant identity before entering the app.">
+                    <div class="phone-frame-wrap">
+                        <img src="../assets/images/splashscreen.png" alt="Splash Screen" class="phone-screen-img" />
+                    </div>
+                </div>
+
+                <div class="carousel-slide"
+                     data-label="Authentication Page"
+                     data-desc="Simple and clean login interface that gets users into the app quickly and securely.">
+                    <div class="phone-frame-wrap">
+                        <img src="../assets/images/login_page.png" alt="Authentication Page" class="phone-screen-img" />
+                    </div>
+                </div>
+
+                <div class="carousel-slide"
+                     data-label="Homepage"
+                     data-desc="Personalized home feed displaying featured recipes and curated collections for food and drinks.">
+                    <div class="phone-frame-wrap">
+                        <img src="../assets/images/homepage.png" alt="Homepage" class="phone-screen-img" />
+                    </div>
+                </div>
+
+                <div class="carousel-slide"
+                     data-label="Explore Page"
+                     data-desc="Browse and search recipes by category, ingredients, or difficulty to find the perfect dish or drink.">
+                    <div class="phone-frame-wrap">
+                        <img src="../assets/images/explore_page.png" alt="Explore Page" class="phone-screen-img" />
+                    </div>
+                </div>
+
+                <div class="carousel-slide"
+                     data-label="Favorites Page"
+                     data-desc="A personal collection of saved recipes, easy to revisit and cook anytime.">
+                    <div class="phone-frame-wrap">
+                        <img src="../assets/images/favorites_page.png" alt="Favorites Page" class="phone-screen-img" />
+                    </div>
+                </div>
+
+                <div class="carousel-slide"
+                     data-label="Profile Page"
+                     data-desc="User profile showcasing preferences, cooking history, and account settings in one place.">
+                    <div class="phone-frame-wrap">
+                        <img src="../assets/images/Profile _Page.png" alt="Profile Page" class="phone-screen-img" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="carousel-arrow carousel-arrow-right" id="arrow-right" aria-label="Next">
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+        </button>
+    </div>
+
+    <div class="carousel-footer">
+        <div class="carousel-dots" id="carousel-dots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+            <button class="dot" data-index="3"></button>
+            <button class="dot" data-index="4"></button>
+            <button class="dot" data-index="5"></button>
+        </div>
+        <div class="carousel-caption">
+            <span class="caption-label" id="caption-label">Splash Screen</span>
+            <p class="caption-desc" id="caption-desc">Branded welcome screen that introduces Bite&amp;Brew with a warm, elegant identity before entering the app.</p>
+        </div>
+        <p class="carousel-click-hint">
+            <span class="material-symbols-outlined">zoom_in</span>
+            Click active screen to enlarge
+        </p>
+    </div>
+</div>
+
+        <div class="figma-cta-wrap" style="margin-bottom: 80px;">
+            <a href="https://www.figma.com/design/gnpraRQ9Zz12d8F9IZdpqm/PROJECT-1-3FSD3?node-id=0-1&t=4iKkPCLkhrjfIyaK-1" target="_blank" rel="noopener noreferrer" class="figma-cta">
+                <span class="material-symbols-outlined">open_in_new</span>
+                View Full Prototype in Figma
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-16 bg-surface border-t border-outline-variant/20">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="font-label-md text-label-md font-bold text-primary">Michael Timothy Sipahutar</span>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2026 Michael Timothy Sipahutar. Crafted with intentionality.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/michaeltimothy02" target="_blank">GitHub</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/michael-timothy-sipahutar-7912ba395" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.instagram.com/michael.timothys/" target="_blank">Instagram</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="mailto:mikesipahutar@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/bitenbrew.js"></script>
+</body>
+</html>

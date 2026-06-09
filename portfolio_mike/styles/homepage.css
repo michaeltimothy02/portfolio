@@ -1,0 +1,269 @@
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.glass-nav {
+    backdrop-filter: blur(20px);
+    background: rgba(248, 249, 250, 0.7);
+}
+
+.hero-bg {
+    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVpCz5yXbY8d5jjJH5IPIqXineeWu2XufGuEPRQCBSUPkXLSaLhrlnR1DAnCsyYxKSfrUV6oJTMaigww3QuTnwQDJcxt2RmUtUmG23emHZFIM1gw7hPIiEwKenFwVl91GQfR9j4WedFL_Wfs6VERxxHnuWyfbIE6ND2sc2TugF75wMLbZi5Nh0tu9_8xjAwavD3XL78f66K3KQ10C8FRKjVP37S24Eu30vOi_iwvhtcskyPIo4PV679aT5YoRq1cIy-bknBr43L_9o');
+    background-size: cover;
+    background-position: center;
+}
+
+.ambient-shadow {
+    box-shadow: 0 40px 60px -15px rgba(0, 0, 0, 0.04);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+nav a::after {
+    display: none !important;
+}
+
+html.dark body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+html.dark .glass-nav {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #about {
+    background-color: #1e293b;
+}
+
+html.dark #about h2,
+html.dark #about h3 {
+    color: #e2e8f0;
+}
+
+html.dark #about p,
+html.dark #about div.space-y-6 {
+    color: #94a3b8;
+}
+
+html.dark #about span {
+    background-color: rgba(148, 163, 184, 0.1);
+    color: #94a3b8;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+
+html.dark #projects {
+    background-color: #0f172a;
+}
+
+html.dark #projects h2,
+html.dark #projects h3 {
+    color: #e2e8f0;
+}
+
+html.dark #projects p {
+    color: #94a3b8;
+}
+
+html.dark #projects .bg-surface-container,
+html.dark #projects .bg-surface-container-high {
+    background-color: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #contact {
+    background-color: #1e293b;
+}
+
+html.dark #contact h2,
+html.dark #contact h4 {
+    color: #e2e8f0;
+}
+
+html.dark #contact p,
+html.dark #contact a:not(.bg-primary) {
+    color: #94a3b8;
+}
+
+
+html.dark #contact form {
+    background-color: #0f172a;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #contact label {
+    color: #94a3b8;
+}
+
+html.dark #contact input,
+html.dark #contact textarea {
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark #contact input::placeholder,
+html.dark #contact textarea::placeholder {
+    color: #475569;
+}
+
+html.dark footer {
+    background-color: #0f172a;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark footer span,
+html.dark footer p,
+html.dark footer a {
+    color: #94a3b8;
+}
+
+html.dark nav {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark nav a:not(.bg-primary),
+html.dark nav button {
+    color: #94a3b8;
+}
+
+html.dark nav a.text-primary,
+html.dark nav a[href="#home"] {
+    color: #e2e8f0;
+}
+
+html.dark #home {
+    background-color: #0f172a;
+}
+
+html.dark #home h1 {
+    color: #e2e8f0;
+}
+
+html.dark #home p {
+    color: #94a3b8;
+}
+
+html.dark #home .text-primary-container {
+    color: #94a3b8;
+}
+
+html.dark #home .bg-primary {
+    background-color: #1e3a5f;
+}
+
+html.dark #home a.border {
+    color: #e2e8f0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+html.dark #home a.border:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+html.dark #home .text-on-surface-variant {
+    color: #64748b;
+}
+
+html.dark #projects .border-b {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #projects button {
+    color: #94a3b8;
+}
+
+html.dark #projects button.active {
+    color: #e2e8f0;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+html.dark #projects .bg-surface-container,
+html.dark #projects .bg-surface-container-high {
+    background-color: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #projects .text-on-surface-variant {
+    color: #94a3b8;
+}
+
+html.dark #projects h3.text-primary {
+    color: #e2e8f0;
+}
+
+html.dark #projects a.border {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+}
+
+
+#projects a.border.rounded-full {
+    transition: all 0.2s ease;
+}
+
+#projects a.border.rounded-full:hover {
+    background-color: #162839;
+    color: #ffffff;
+    border-color: #162839;
+    transform: scale(1.1);
+}
+
+html.dark #projects a.border.rounded-full:hover {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    border-color: #e2e8f0;
+}
+
+html.dark #projects .text-secondary {
+    color: #9ecfd1;
+}
+
+html.dark #projects .bg-secondary {
+    background-color: #1a4e50;
+    color: #9ecfd1;
+}
+
+html.dark #projects a.font-label-md.text-primary {
+    color: #9ecfd1;
+}
+
+html.dark #projects a.font-label-md.text-primary:hover {
+    color: #b5c8df;
+}
+
+html.dark #home .bg-primary {
+    background-color: #9ecfd1;
+}
+
+html.dark nav a.bg-primary {
+    background-color: #356668;
+    color: #ffffff;
+}
+
+html.dark #contact .bg-primary {
+    background-color: #356668;
+    color: #ffffff;
+}
+
+html.dark #about span {
+    background-color: rgba(53, 102, 104, 0.15);
+    color: #9ecfd1;
+    border-color: rgba(53, 102, 104, 0.3);
+}
+
+html.dark #home .text-on-surface-variant {
+    color: #9ecfd1;
+}
+
+html.dark #projects span.text-primary {
+    color: #9ecfd1;
+}

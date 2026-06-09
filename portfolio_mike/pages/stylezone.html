@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stylezone Detail Project</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#2c3e50",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#4d453d",
+                        "on-primary-fixed-variant": "#36485b",
+                        "on-tertiary-container": "#b0a59a",
+                        "surface-bright": "#f8f9fa",
+                        "outline-variant": "#c4c6cd",
+                        "tertiary-fixed": "#ede0d4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d1c4b9",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed": "#002021",
+                        "primary": "#162839",
+                        "secondary": "#356668",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#2c261e",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "outline": "#74777d",
+                        "secondary-container": "#b9ecee",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#4e6073",
+                        "on-tertiary-fixed": "#211b13",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b5c8df",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#43474c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#96a9be",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#d1e4fb",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "on-secondary-container": "#3c6c6e",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#091d2e",
+                        "tertiary-container": "#433b33",
+                        "inverse-primary": "#b5c8df",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                        "3xl": "24px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/stylezone.css" />
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 h-20">
+        <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
+            <a class="font-headline-md text-headline-md text-primary tracking-tight" href="../pages/homepage.html">Michael Portfolio</a>
+            <div class="flex items-center gap-8">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block" href="../pages/homepage.html#projects">← All Projects</a>
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="dark-toggle">dark_mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <main class="pt-20">
+
+        <header class="max-w-3xl mx-auto px-6 pt-16 pb-12">
+            <div class="flex items-center gap-2 mb-8 text-on-surface-variant">
+                <a href="../pages/homepage.html#projects" class="font-label-md text-label-md hover:text-secondary transition-colors">Projects</a>
+                <span class="text-outline-variant">/</span>
+                <span class="font-label-md text-label-md text-on-surface">Stylezone</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tag">WAP Project</span>
+                <span class="tag">Website</span>
+                <span class="tag">Fashion E-Commerce</span>
+            </div>
+
+            <h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                Stylezone — Fashion E-Commerce Website
+            </h1>
+
+            <div class="meta-row">
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">3 Weeks</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Database, Product Detail & Admin Dashboard</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools/Tech</span>
+                    <span class="meta-value">PHP · MySQL</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Platform</span>
+                    <span class="meta-value">Website</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="hero-image-wrap">
+            <div class="hero-zoom-wrap">
+                <img src="../assets/images/header_Stylezone.png" alt="Stylezone Preview" class="hero-image hero-zoomable" />
+                <div class="hero-zoom-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click to enlarge
+                </div>
+            </div>
+        </div>
+
+        <article class="article-body">
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Overview</h2>
+                <p>StyleZone is a fashion e-commerce website developed as a WAP (Web Application Programming) project. The name combines "Style", representing fashion and self-expression, and "Zone", representing a place where various fashion styles come together. Built with PHP and MySQL, the platform allows customers to browse and purchase products while enabling administrators to manage the store through a dedicated dashboard.</p>
+            </section>
+
+            <section class="article-section reveal">
+                <h2 class="section-heading">Customer Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">lock</span>
+                        <h3 class="feature-title">Authentication</h3>
+                        <p class="feature-desc">Register, login, and logout securely with session-based authentication.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">checkroom</span>
+                        <h3 class="feature-title">Product Browsing</h3>
+                        <p class="feature-desc">View fashion products with a clean and responsive UI across all devices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">filter_list</span>
+                        <h3 class="feature-title">Product Filtering</h3>
+                        <p class="feature-desc">Filter products by category and gender to find the right item quickly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">info</span>
+                        <h3 class="feature-title">Product Details</h3>
+                        <p class="feature-desc">View detailed information including description, price, stock, and size options.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">shopping_cart_checkout</span>
+                        <h3 class="feature-title">Checkout & Payment</h3>
+                        <p class="feature-desc">Place orders and choose from available payment methods seamlessly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section reveal">
+                <h2 class="section-heading">Admin Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">dashboard</span>
+                        <h3 class="feature-title">Dashboard</h3>
+                        <p class="feature-desc">Monitor products, users, and recent orders at a glance from a centralized dashboard.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">inventory_2</span>
+                        <h3 class="feature-title">Product Management</h3>
+                        <p class="feature-desc">Add, edit, and delete products with full CRUD operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">receipt_long</span>
+                        <h3 class="feature-title">Order Management</h3>
+                        <p class="feature-desc">View order history and detailed information for every transaction.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">manage_accounts</span>
+                        <h3 class="feature-title">User Management</h3>
+                        <p class="feature-desc">Manage both admin and customer accounts from one place.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">account_circle</span>
+                        <h3 class="feature-title">Profile Settings</h3>
+                        <p class="feature-desc">Update admin profile information including name, email, and password.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Database Design</h2>
+                <p>The database is structured to support the full e-commerce workflow from user authentication and product catalog management to order processing and admin controls. Key tables include users, products, categories, orders, order_items, payments, and payment_details, all connected through relational foreign keys to maintain data integrity.</p>
+            </section>
+
+        </article>
+
+        <div class="max-w-[680px] mx-auto px-6 reveal" style="margin-bottom: 64px;">
+            <div class="erd-wrap rounded-[16px] overflow-hidden border border-outline-variant/30">
+                <img
+                    src="../assets/images/ERD_stylezone.png"
+                    alt="Database ERD"
+                    class="w-full block"
+                />
+                <div class="erd-zoom-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click to enlarge
+                </div>
+            </div>
+            <p class="text-center text-[13px] text-on-surface-variant mt-3 italic">Entity Relationship Diagram — Stylezone Database</p>
+        </div>
+
+        <div class="max-w-[680px] mx-auto px-6 reveal article-section" style="margin-bottom:0;">
+            <h2 class="section-heading">The Interface</h2>
+            <p class="article-p">Key screens from both the customer-facing storefront and the admin dashboard, showcasing the full user journey from browsing to checkout and management.</p>
+        </div>
+
+        <div class="carousel-wrapper reveal">
+            <p class="carousel-section-label">Customer Interface</p>
+
+            <div class="carousel-outer">
+                <button class="carousel-arrow carousel-arrow-left" id="arrow-left-customer" aria-label="Previous">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </button>
+
+                <div class="carousel-card">
+                    <div class="carousel-slides" id="customer-carousel">
+                        <div class="carousel-slide active"
+                             data-label="Homepage"
+                             data-desc="The main storefront showcasing featured and latest fashion products with a clean, browsable layout.">
+                            <img src="../assets/images/stylezone_.png" alt="Homepage" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Product Page"
+                             data-desc="Browse all available fashion products with filtering options by category and gender.">
+                            <img src="../assets/images/product_stylezone.png" alt="Product Page" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Product Detail"
+                             data-desc="Detailed product view with description, price, available sizes, and stock information.">
+                            <img src="../assets/images/detail_product_stylezone.png" alt="Product Detail" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Cart"
+                             data-desc="Shopping cart displaying selected items with quantity controls and order summary.">
+                            <img src="../assets/images/cart_stylezone_.png" alt="Cart" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Checkout"
+                             data-desc="Checkout page with delivery details and payment method selection.">
+                            <img src="../assets/images/checkout_stylezone.png" alt="Checkout" />
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-right" id="arrow-right-customer" aria-label="Next">
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </button>
+            </div>
+
+            <div class="carousel-footer">
+                <div class="carousel-dots" id="dots-customer">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                </div>
+                <div class="carousel-caption">
+                    <span class="caption-label" id="caption-label-customer">Homepage</span>
+                    <p class="caption-desc" id="caption-desc-customer">The main storefront showcasing featured and latest fashion products with a clean, browsable layout.</p>
+                </div>
+                <p class="carousel-click-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click active image to enlarge
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-wrapper reveal" style="margin-bottom: 48px;">
+            <p class="carousel-section-label">Admin Interface</p>
+
+            <div class="carousel-outer">
+                <button class="carousel-arrow carousel-arrow-left" id="arrow-left-admin" aria-label="Previous">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </button>
+
+                <div class="carousel-card">
+                    <div class="carousel-slides" id="admin-carousel">
+                        <div class="carousel-slide active"
+                             data-label="Admin Dashboard"
+                             data-desc="Overview of key metrics including total products, users, and recent orders.">
+                            <img src="../assets/images/admin_dashboard_stylezone.png" alt="Admin Dashboard" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Product Management"
+                             data-desc="Full CRUD interface for adding, editing, and deleting fashion products.">
+                            <img src="../assets/images/product_stylezone_.png" alt="Product Management" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="User Management"
+                             data-desc="Manage customer and admin accounts including roles and account status.">
+                            <img src="../assets/images/users_management_stylezone.png" alt="User Management" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Order Management"
+                             data-desc="View all orders with status tracking and detailed order information.">
+                            <img src="../assets/images/order_management_sylezone.png" alt="Order Management" />
+                        </div>
+                        <div class="carousel-slide"
+                             data-label="Profile Settings"
+                             data-desc="Admin profile page for updating personal information and credentials.">
+                            <img src="../assets/images/admin_stylezone.png" alt="Profile Settings" />
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-right" id="arrow-right-admin" aria-label="Next">
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </button>
+            </div>
+
+            <div class="carousel-footer">
+                <div class="carousel-dots" id="dots-admin">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                </div>
+                <div class="carousel-caption">
+                    <span class="caption-label" id="caption-label-admin">Admin Dashboard</span>
+                    <p class="caption-desc" id="caption-desc-admin">Overview of key metrics including total products, users, and recent orders.</p>
+                </div>
+                <p class="carousel-click-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click active image to enlarge
+                </p>
+            </div>
+        </div>
+
+        <div class="figma-cta-wrap" style="margin-bottom: 80px;">
+            <a href="https://github.com/almeriotsaa/STYLEZONE.git" target="_blank" rel="noopener noreferrer" class="figma-cta">
+                <span class="material-symbols-outlined">code</span>
+                View Source Code on GitHub
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-16 bg-surface border-t border-outline-variant/20">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="font-label-md text-label-md font-bold text-primary">Michael Timothy Sipahutar</span>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2026 Michael Timothy Sipahutar. Crafted with intentionality.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/michaeltimothy02" target="_blank">GitHub</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/michael-timothy-sipahutar-7912ba395" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.instagram.com/michael.timothys/" target="_blank">Instagram</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="mailto:mikesipahutar@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/stylezone.js"></script>
+</body>
+</html>

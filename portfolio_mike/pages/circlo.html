@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Circlo Detail Project</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#2c3e50",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#4d453d",
+                        "on-primary-fixed-variant": "#36485b",
+                        "on-tertiary-container": "#b0a59a",
+                        "surface-bright": "#f8f9fa",
+                        "outline-variant": "#c4c6cd",
+                        "tertiary-fixed": "#ede0d4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d1c4b9",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed": "#002021",
+                        "primary": "#162839",
+                        "secondary": "#356668",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#2c261e",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "outline": "#74777d",
+                        "secondary-container": "#b9ecee",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#4e6073",
+                        "on-tertiary-fixed": "#211b13",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b5c8df",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#43474c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#96a9be",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#d1e4fb",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "on-secondary-container": "#3c6c6e",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#091d2e",
+                        "tertiary-container": "#433b33",
+                        "inverse-primary": "#b5c8df",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2"
+                    },
+                    fontFamily: {
+                        "label-md": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                        "3xl": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/circlo.css" />
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/40 h-20">
+        <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
+            <a class="font-headline-md text-headline-md text-primary tracking-tight"
+                href="../pages/homepage.html">Michael Portfolio</a>
+            <div class="flex items-center gap-8">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block"
+                    href="../pages/homepage.html#projects">← All Projects</a>
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
+                    id="dark-toggle">dark_mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <main class="pt-20">
+
+        <header class="max-w-3xl mx-auto px-6 pt-16 pb-12">
+            <div class="flex items-center gap-2 mb-8 text-on-surface-variant">
+                <a href="../pages/homepage.html#projects"
+                    class="font-label-md text-label-md hover:text-secondary transition-colors">Projects</a>
+                <span class="text-outline-variant">/</span>
+                <span class="font-label-md text-label-md text-on-surface">Circlo</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tag">UI/UX Design</span>
+                <span class="tag">Mobile App</span>
+                <span class="tag">Social Media</span>
+            </div>
+
+            <h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                Circlo — Community Social App
+            </h1>
+
+            <div class="meta-row">
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">Ongoing</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">UI Designer & UX Designer</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools/Tech</span>
+                    <span class="meta-value">Figma · Flutter</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Platform</span>
+                    <span class="meta-value">iOS & Android</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="hero-image-wrap">
+            <div class="hero-zoom-wrap">
+                <img src="../assets/images/circlo_hero.png" alt="Circlo Preview" class="hero-image hero-zoomable" />
+                <div class="hero-zoom-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click to enlarge
+                </div>
+            </div>
+        </div>
+
+        <article class="article-body">
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Overview</h2>
+                <p>Circlo is a personal project that focuses on creating a social platform where teenagers and young
+                    adults can connect through shared interests. Inspired by the idea of a circle, Circlo provides a
+                    space for users to join communities, interact with like-minded people, and build meaningful
+                    connections around their passions.</p>
+                <p>Tagline: <strong>"Where Circles Come Alive"</strong></p>
+            </section>
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Design Process</h2>
+                <p>The design process was structured into three key stages, each building upon the last to create a
+                    well-informed and cohesive user experience.</p>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-marker">
+                            <span class="step-num">1</span>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content text-justify">
+                            <h3>Research</h3>
+                            <p>Researched teenagers and young adults aged 15–30 who are active on social media and
+                                interested in joining communities based on shared interests.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-marker">
+                            <span class="step-num">2</span>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content text-justify">
+                            <h3>Wireframing</h3>
+                            <p>Developed low-fidelity wireframes to quickly test layout decisions, content hierarchy,
+                                and navigation patterns before committing to visual design choices.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-marker">
+                            <span class="step-num">3</span>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content text-justify">
+                            <h3>Prototyping</h3>
+                            <p>Built high-fidelity interactive prototypes in Figma to visualize the complete user
+                                journey and validate design decisions with real interactions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Visual Language</h2>
+                <p>The visual design of Circlo uses a violet-purple color palette with a soft lavender background to
+                    create a modern, vibrant, and welcoming experience for young users.</p>
+
+                <div class="swatch-row">
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#534AB7;"></div>
+                        <span class="swatch-name">Circlo Purple</span>
+                        <span class="swatch-hex">#534AB7</span>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#EDE9F9;"></div>
+                        <span class="swatch-name">Lavender Mist</span>
+                        <span class="swatch-hex">#EDE9F9</span>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#7B74CC;"></div>
+                        <span class="swatch-name">Mid Violet</span>
+                        <span class="swatch-hex">#7B74CC</span>
+                    </div>
+                    <div class="swatch-item">
+                        <div class="swatch" style="background:#1A1830;"></div>
+                        <span class="swatch-name">Deep Ink</span>
+                        <span class="swatch-hex">#1A1830</span>
+                    </div>
+                </div>
+
+                <p>The interface uses <strong>Poppins</strong> as the primary typeface because of its clean, modern, and
+                    easy-to-read appearance, making it suitable for a social platform aimed at teenagers and young
+                    adults.</p>
+
+                <div class="type-specimen">
+                    <div class="type-row">
+                        <span class="type-sample-display">Circlo</span>
+                        <span class="type-meta">Poppins · Logo / Brand</span>
+                    </div>
+                    <div class="type-row">
+                        <span class="type-sample-heading">Your Circle</span>
+                        <span class="type-meta">Poppins · Heading</span>
+                    </div>
+                    <div class="type-row">
+                        <span class="type-sample-body">Join communities built around what you love.</span>
+                        <span class="type-meta">Poppins · Body</span>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <div class="max-w-[680px] mx-auto px-6 reveal article-section" style="margin-bottom:0;">
+            <h2 class="section-heading">The Interface</h2>
+            <p>Five core screens represent the main user journey from the splash screen through community discovery,
+                posts, and profile management.</p>
+        </div>
+
+        <div class="carousel-wrapper reveal" style="margin-top: 32px;">
+            <p class="carousel-section-label">App Screens</p>
+
+            <div class="carousel-outer">
+                <button class="carousel-arrow carousel-arrow-left" id="arrow-left" aria-label="Previous">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </button>
+
+                <div class="carousel-card">
+                    <div class="carousel-slides" id="interface-carousel">
+
+                        <div class="carousel-slide active" data-label="SPLASH SCREEN"
+                            data-desc="Displays the Circlo logo when the app is launched, creating a simple and recognizable first impression.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/circlo-splash.png" alt="Splash Screen"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="HOMEPAGE"
+                            data-desc="The main feed where users can view posts, interact with communities, and stay updated with activities from their circles.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/circlo-home.png" alt="Home Feed" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="EXPLORE CIRCLE"
+                            data-desc="Allows users to search for and discover new communities based on their interests.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/circlo-explore.png" alt="Explore Circles"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="CHAT"
+                            data-desc="Provides direct messaging and community conversations to help users communicate and stay connected.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/circlo-chat.png" alt="Circle Detail"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="PROFILE PAGE"
+                            data-desc="Displays user information, posts, and joined communities, with options to edit profile details.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/circlo-profile.png" alt="Profile Page"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-right" id="arrow-right" aria-label="Next">
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </button>
+            </div>
+
+            <div class="carousel-footer">
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                </div>
+                <div class="carousel-caption">
+                    <span class="caption-label" id="caption-label">SPLASH SCREEN</span>
+                    <p class="caption-desc" id="caption-desc">Displays the Circlo logo when the app is launched, creating a simple and recognizable first impression.</p>
+                </div>
+                <p class="carousel-click-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click active screen to enlarge
+                </p>
+            </div>
+        </div>
+
+        <div class="figma-cta-wrap" style="margin-bottom: 80px;">
+            <a href="https://www.figma.com/design/XrQWFbi7igxh2bCeo9fwpJ/Circlo--Where-Circles-Come-Alive?node-id=0-1&t=ItrRmflqjQpzl57M-1" target="_blank" rel="noopener noreferrer"
+                class="figma-cta">
+                <span class="material-symbols-outlined">open_in_new</span>
+                View Full Prototype in Figma
+            </a>
+            <a href="https://github.com/almeriotsaa/Circlo.git" target="_blank" rel="noopener noreferrer"
+                class="figma-cta">
+                <span class="material-symbols-outlined">code</span>
+                View Source Code on GitHub
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-16 bg-surface border-t border-outline-variant/20">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="font-label-md text-label-md text-primary">Michael Timothy Sipahutar</span>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2026 Michael Timothy Sipahutar. Crafted
+                    with intentionality.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="https://github.com/michaeltimothy02" target="_blank">GitHub</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="https://www.linkedin.com/in/michael-timothy-sipahutar-7912ba395" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="https://www.instagram.com/michael.timothys/" target="_blank">Instagram</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="mailto:mikesipahutar@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/circlo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Movizone Detail Project</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#2c3e50",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#4d453d",
+                        "on-primary-fixed-variant": "#36485b",
+                        "on-tertiary-container": "#b0a59a",
+                        "surface-bright": "#f8f9fa",
+                        "outline-variant": "#c4c6cd",
+                        "tertiary-fixed": "#ede0d4",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d1c4b9",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container": "#edeeef",
+                        "surface-dim": "#d9dadb",
+                        "surface-variant": "#e1e3e4",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed": "#002021",
+                        "primary": "#162839",
+                        "secondary": "#356668",
+                        "on-background": "#191c1d",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#2c261e",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "outline": "#74777d",
+                        "secondary-container": "#b9ecee",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#4e6073",
+                        "on-tertiary-fixed": "#211b13",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b5c8df",
+                        "background": "#f8f9fa",
+                        "on-surface-variant": "#43474c",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#96a9be",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed": "#d1e4fb",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "on-secondary-container": "#3c6c6e",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#091d2e",
+                        "tertiary-container": "#433b33",
+                        "inverse-primary": "#b5c8df",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                        "3xl": "24px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../styles/movizone.css" />
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 h-20">
+        <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
+            <a class="font-headline-md text-headline-md text-primary tracking-tight"
+                href="../pages/homepage.html">Michael Portfolio</a>
+            <div class="flex items-center gap-8">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block"
+                    href="../pages/homepage.html#projects">← All Projects</a>
+                <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
+                    id="dark-toggle">dark_mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <main class="pt-20">
+
+        <header class="max-w-3xl mx-auto px-6 pt-16 pb-12">
+            <div class="flex items-center gap-2 mb-8 text-on-surface-variant">
+                <a href="../pages/homepage.html#projects"
+                    class="font-label-md text-label-md hover:text-secondary transition-colors">Projects</a>
+                <span class="text-outline-variant">/</span>
+                <span class="font-label-md text-label-md text-on-surface">Movizone</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tag">Mobile App</span>
+                <span class="tag">Movie Catalog</span>
+            </div>
+
+            <h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                Movizone — Movie Catalog App
+            </h1>
+
+            <div class="meta-row">
+                <div class="meta-item">
+                    <span class="meta-label">Duration</span>
+                    <span class="meta-value">4 Weeks</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value"
+                        style="white-space: normal; max-width: 160px; text-align: center; line-height: 1.5;">Authentication,
+                        Favorite Movies & User Profile</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Tools/Tech</span>
+                    <span class="meta-value"
+                        style="white-space: normal; max-width: 160px; text-align: center; line-height: 1.5;">Flutter ·
+                        PHP · MySQL · TMDB API</span>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <span class="meta-label">Platform</span>
+                    <span class="meta-value">iOS & Android</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="hero-image-wrap reveal">
+            <div class="hero-zoom-wrap">
+                <img src="../assets/images/movizone_hero.png" alt="Movizone Preview" class="hero-image hero-zoomable" />
+                <div class="hero-zoom-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click to enlarge
+                </div>
+            </div>
+        </div>
+
+        <article class="article-body">
+
+            <section class="article-section reveal text-justify">
+                <h2 class="section-heading">Overview</h2>
+                <p>MoviZone is a movie discovery application inspired by the words "Movie" and "Zone", representing a
+                    place where users can explore a wide variety of films. Built using Flutter, PHP, and MySQL, the
+                    application integrates the TMDB API to provide up-to-date movie information, including ratings,
+                    descriptions, posters, and other movie details.</p>
+            </section>
+
+            <section class="article-section reveal">
+                <h2 class="section-heading">Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">lock</span>
+                        <h3 class="feature-title">Authentication</h3>
+                        <p class="feature-desc">Register a new account, log in, and log out securely with session-based
+                            authentication.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">filter_list</span>
+                        <h3 class="feature-title">Filter by Category</h3>
+                        <p class="feature-desc">Browse movies filtered by genre and category for a more focused
+                            discovery experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">search</span>
+                        <h3 class="feature-title">Search Movies</h3>
+                        <p class="feature-desc">Search for any movie by title using the TMDB API with real-time results
+                            and recent search history.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">favorite</span>
+                        <h3 class="feature-title">Favorite Movies</h3>
+                        <p class="feature-desc">Add movies to your personal favorites list and remove them whenever you
+                            like.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">manage_accounts</span>
+                        <h3 class="feature-title">Edit Profile</h3>
+                        <p class="feature-desc">Update your username and manage your profile photo add or delete it as
+                            needed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="material-symbols-outlined feature-icon">movie</span>
+                        <h3 class="feature-title">Movie Detail</h3>
+                        <p class="feature-desc">View full movie details including trailer, overview, cast & crew, pulled
+                            live from TMDB API.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <div class="ia-svg-wrap reveal">
+            <h2 class="section-heading"
+                style="max-width:680px;margin:0 auto 24px;padding:0 24px 12px;border-bottom:2px solid #b9ecee;font-family:'Manrope',sans-serif;font-size:26px;font-weight:700;color:#162839;">
+                Information Architecture</h2>
+            <p class="article-p" style="max-width:680px;margin:0 auto 24px;padding:0 24px;">The app's navigation is
+                structured around a bottom navigation bar with four main tabs: Home, Explore, Favorite, and Profile. All
+                flows originate from the authentication screens, and any movie card across all tabs navigates to the
+                shared Detail Movie screen.</p>
+
+            <div class="ia-container" id="ia-container">
+                <img src="../assets/images/Information Architecture - MoviZone.png"
+                    alt="Information Architecture Movizone" class="ia-diagram-img"
+                    style="width:100%; display:block; border-radius:8px;" />
+            </div>
+            <p class="text-center text-[13px] text-on-surface-variant mt-3 italic"
+                style="font-family:'Inter',sans-serif;">Information Architecture — Movizone</p>
+        </div>
+
+        <div class="max-w-[680px] mx-auto px-6 reveal article-section" style="margin-bottom:0;">
+            <h2 class="section-heading">The Interface</h2>
+            <p class="article-p">Key screens from the Movizone Android app showcasing the full user journey, from
+                authentication and movie discovery through to favorites management and profile settings.</p>
+        </div>
+
+        <div class="carousel-wrapper reveal" style="margin-top: 32px;">
+            <p class="carousel-section-label">App Screens</p>
+
+            <div class="carousel-outer">
+                <button class="carousel-arrow carousel-arrow-left" id="arrow-left-main" aria-label="Previous">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </button>
+
+                <div class="carousel-card">
+                    <div class="carousel-slides" id="main-carousel">
+
+                        <div class="carousel-slide active" data-label="SPLASH SCREEN"
+                            data-desc="Entry point of the app. Users are greeted with a splash screen before being prompted to log in or register.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/movizone_splash.png" alt="Splash Screen"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+                        <div class="carousel-slide" data-label="HOMEPAGE"
+                            data-desc="Displays trending movies fetched from TMDB API. Tapping a movie navigates to the detail movie.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/movizone_homepage.png" alt="Home" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="EXPLORE PAGE"
+                            data-desc="Search for movies by title with live TMDB results and filter by genre category.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/movizone_explore.png" alt="Explore"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="DETAIL MOVIE"
+                            data-desc="Full movie information from TMDB including trailer, overview, cast, and the option to add to favorites.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/movizone_detail.png" alt="Detail Movie"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="FAVORITE MOVIES"
+                            data-desc="Personal favorites list saved to the backend. Movies can be removed from the list using swipe to delete action.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/movizone_favorite.png" alt="Favorite Movies"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide" data-label="USER PROFILE"
+                            data-desc="View and update profile information, access your favorite movies list and log out of the app.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/movizone_profile.png" alt="Profile"
+                                    class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-right" id="arrow-right-main" aria-label="Next">
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </button>
+            </div>
+
+            <div class="carousel-footer">
+                <div class="carousel-dots" id="dots-main">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                    <button class="dot" data-index="5"></button>
+                </div>
+                <div class="carousel-caption">
+                    <span class="caption-label" id="caption-label-main">Splash &amp; Login</span>
+                    <p class="caption-desc" id="caption-desc-main">Entry point of the app. Users are greeted with a
+                        splash screen before being prompted to log in or register.</p>
+                </div>
+                <p class="carousel-click-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click active screen to enlarge
+                </p>
+            </div>
+        </div>
+
+        <div class="figma-cta-wrap" style="margin-bottom: 80px;">
+            <a href="https://github.com/almeriotsaa/MoviZone.git" target="_blank" rel="noopener noreferrer"
+                class="figma-cta">
+                <span class="material-symbols-outlined">code</span>
+                View Source Code on GitHub
+            </a>
+            <a href="https://github.com/michaeltimothy02/MoviZone_Api.git" target="_blank" rel="noopener noreferrer"
+                class="figma-cta">
+                <span class="material-symbols-outlined">code</span>
+                View Authentication Code
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="w-full py-16 bg-surface border-t border-outline-variant/20">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="font-label-md text-label-md text-primary">Michael Timothy Sipahutar</span>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2026 Michael Timothy Sipahutar. Crafted
+                    with intentionality.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="https://github.com/michaeltimothy02" target="_blank">GitHub</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="https://www.linkedin.com/in/michael-timothy-sipahutar-7912ba395" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="https://www.instagram.com/michael.timothys/" target="_blank">Instagram</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md"
+                    href="mailto:mikesipahutar@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lightbox-overlay" id="lb-overlay">
+        <div class="lightbox-inner" id="lb-inner">
+            <img class="lightbox-img" id="lb-img" src="" alt="" />
+        </div>
+        <button class="lightbox-close" id="lb-close" aria-label="Close">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="lightbox-controls">
+            <button class="lightbox-btn" id="lb-zoom-out"><span
+                    class="material-symbols-outlined">zoom_out</span></button>
+            <span class="lightbox-zoom-label" id="lb-zoom-label">100%</span>
+            <button class="lightbox-btn" id="lb-zoom-in"><span class="material-symbols-outlined">zoom_in</span></button>
+            <button class="lightbox-btn" id="lb-zoom-reset"><span
+                    class="material-symbols-outlined">center_focus_strong</span></button>
+        </div>
+    </div>
+
+    <script src="../scripts/moviezone.js"></script>
+</body>
+
+</html>
