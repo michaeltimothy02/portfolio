@@ -84,6 +84,7 @@
                     fontSize: {
                         "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
                         "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg-mobile": ["30px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
                         "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
                         "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
                         "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
@@ -99,12 +100,17 @@
 </head>
 
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
-
+    
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 h-20">
         <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
             <a class="font-headline-md text-headline-md text-primary tracking-tight" href="../pages/homepage.html">Michael Portfolio</a>
-            <div class="flex items-center gap-8">
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block" href="../pages/homepage.html#projects">← All Projects</a>
+            <div class="flex items-center gap-4 md:gap-8">
+                <!-- FIX: Show "← All Projects" on mobile too, but shorter label -->
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden sm:block" href="../pages/homepage.html#projects">← All Projects</a>
+                <!-- FIX: Ultra-small screens get icon-only back button -->
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 sm:hidden flex items-center gap-1" href="../pages/homepage.html#projects">
+                    <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                </a>
                 <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="dark-toggle">dark_mode</button>
             </div>
         </div>
@@ -113,21 +119,20 @@
     <div class="progress-bar" id="progress-bar"></div>
 
     <main class="pt-20">
-
-        <header class="max-w-3xl mx-auto px-6 pt-16 pb-12">
-            <div class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <header class="max-w-3xl mx-auto px-6 pt-12 md:pt-16 pb-10 md:pb-12">
+            <div class="flex items-center gap-2 mb-6 md:mb-8 text-on-surface-variant">
                 <a href="../pages/homepage.html#projects" class="font-label-md text-label-md hover:text-secondary transition-colors">Projects</a>
                 <span class="text-outline-variant">/</span>
                 <span class="font-label-md text-label-md text-on-surface">Bite&amp;Brew</span>
             </div>
 
-            <div class="flex flex-wrap gap-2 mb-6">
+            <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
                 <span class="tag">UI/UX Design</span>
                 <span class="tag">Mobile App</span>
                 <span class="tag">Food & Beverage Recipe</span>
             </div>
 
-            <h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-5 md:mb-6 leading-tight">
                 Bite&amp;Brew — Recipe App
             </h1>
 
@@ -154,7 +159,7 @@
             </div>
         </header>
 
-                <div class="hero-image-wrap">
+        <div class="hero-image-wrap">
             <div class="hero-zoom-wrap">
                 <img src="../assets/images/bitenbrew1 (1).png" alt="Bite&amp;Brew Preview" class="hero-image hero-zoomable" />
                 <div class="hero-zoom-hint">
@@ -245,7 +250,7 @@
                         <span class="type-meta">Lora · Logo</span>
                     </div>
                     <div class="type-row">
-                        <span class="type-sample-heading">Search & Explore Recipes</span>
+                        <span class="type-sample-heading">Search &amp; Explore Recipes</span>
                         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@400;600;700&family=Manrope:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
                         <span class="type-meta">Poppins · Heading</span>
                     </div>
@@ -264,91 +269,91 @@
         </div>
 
         <div class="carousel-wrapper reveal" style="margin-top: 32px;">
-    <p class="carousel-section-label">App Screens</p>
+            <p class="carousel-section-label">App Screens</p>
 
-    <div class="carousel-outer">
-        <button class="carousel-arrow carousel-arrow-left" id="arrow-left" aria-label="Previous">
-            <span class="material-symbols-outlined">arrow_back_ios</span>
-        </button>
+            <div class="carousel-outer">
+                <button class="carousel-arrow carousel-arrow-left" id="arrow-left" aria-label="Previous">
+                    <span class="material-symbols-outlined">arrow_back_ios</span>
+                </button>
 
-        <div class="carousel-card">
-            <div class="carousel-slides" id="interface-carousel">
+                <div class="carousel-card">
+                    <div class="carousel-slides" id="interface-carousel">
 
-                <div class="carousel-slide active"
-                     data-label="Splash Screen"
-                     data-desc="Branded welcome screen that introduces Bite&Brew with a warm, elegant identity before entering the app.">
-                    <div class="phone-frame-wrap">
-                        <img src="../assets/images/splashscreen.png" alt="Splash Screen" class="phone-screen-img" />
+                        <div class="carousel-slide active"
+                             data-label="Splash Screen"
+                             data-desc="Branded welcome screen that introduces Bite&Brew with a warm, elegant identity before entering the app.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/splashscreen.png" alt="Splash Screen" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide"
+                             data-label="Authentication Page"
+                             data-desc="Simple and clean login interface that gets users into the app quickly and securely.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/login_page.png" alt="Authentication Page" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide"
+                             data-label="Homepage"
+                             data-desc="Personalized home feed displaying featured recipes and curated collections for food and drinks.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/homepage.png" alt="Homepage" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide"
+                             data-label="Explore Page"
+                             data-desc="Browse and search recipes by category, ingredients, or difficulty to find the perfect dish or drink.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/explore_page.png" alt="Explore Page" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide"
+                             data-label="Favorites Page"
+                             data-desc="A personal collection of saved recipes, easy to revisit and cook anytime.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/favorites_page.png" alt="Favorites Page" class="phone-screen-img" />
+                            </div>
+                        </div>
+
+                        <div class="carousel-slide"
+                             data-label="Profile Page"
+                             data-desc="User profile showcasing preferences, cooking history, and account settings in one place.">
+                            <div class="phone-frame-wrap">
+                                <img src="../assets/images/Profile _Page.png" alt="Profile Page" class="phone-screen-img" />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="carousel-slide"
-                     data-label="Authentication Page"
-                     data-desc="Simple and clean login interface that gets users into the app quickly and securely.">
-                    <div class="phone-frame-wrap">
-                        <img src="../assets/images/login_page.png" alt="Authentication Page" class="phone-screen-img" />
-                    </div>
-                </div>
+                <button class="carousel-arrow carousel-arrow-right" id="arrow-right" aria-label="Next">
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </button>
+            </div>
 
-                <div class="carousel-slide"
-                     data-label="Homepage"
-                     data-desc="Personalized home feed displaying featured recipes and curated collections for food and drinks.">
-                    <div class="phone-frame-wrap">
-                        <img src="../assets/images/homepage.png" alt="Homepage" class="phone-screen-img" />
-                    </div>
+            <div class="carousel-footer">
+                <div class="carousel-dots" id="carousel-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                    <button class="dot" data-index="5"></button>
                 </div>
-
-                <div class="carousel-slide"
-                     data-label="Explore Page"
-                     data-desc="Browse and search recipes by category, ingredients, or difficulty to find the perfect dish or drink.">
-                    <div class="phone-frame-wrap">
-                        <img src="../assets/images/explore_page.png" alt="Explore Page" class="phone-screen-img" />
-                    </div>
+                <div class="carousel-caption">
+                    <span class="caption-label" id="caption-label">Splash Screen</span>
+                    <p class="caption-desc" id="caption-desc">Branded welcome screen that introduces Bite&amp;Brew with a warm, elegant identity before entering the app.</p>
                 </div>
-
-                <div class="carousel-slide"
-                     data-label="Favorites Page"
-                     data-desc="A personal collection of saved recipes, easy to revisit and cook anytime.">
-                    <div class="phone-frame-wrap">
-                        <img src="../assets/images/favorites_page.png" alt="Favorites Page" class="phone-screen-img" />
-                    </div>
-                </div>
-
-                <div class="carousel-slide"
-                     data-label="Profile Page"
-                     data-desc="User profile showcasing preferences, cooking history, and account settings in one place.">
-                    <div class="phone-frame-wrap">
-                        <img src="../assets/images/Profile _Page.png" alt="Profile Page" class="phone-screen-img" />
-                    </div>
-                </div>
-
+                <p class="carousel-click-hint">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    Click active screen to enlarge
+                </p>
             </div>
         </div>
-
-        <button class="carousel-arrow carousel-arrow-right" id="arrow-right" aria-label="Next">
-            <span class="material-symbols-outlined">arrow_forward_ios</span>
-        </button>
-    </div>
-
-    <div class="carousel-footer">
-        <div class="carousel-dots" id="carousel-dots">
-            <button class="dot active" data-index="0"></button>
-            <button class="dot" data-index="1"></button>
-            <button class="dot" data-index="2"></button>
-            <button class="dot" data-index="3"></button>
-            <button class="dot" data-index="4"></button>
-            <button class="dot" data-index="5"></button>
-        </div>
-        <div class="carousel-caption">
-            <span class="caption-label" id="caption-label">Splash Screen</span>
-            <p class="caption-desc" id="caption-desc">Branded welcome screen that introduces Bite&amp;Brew with a warm, elegant identity before entering the app.</p>
-        </div>
-        <p class="carousel-click-hint">
-            <span class="material-symbols-outlined">zoom_in</span>
-            Click active screen to enlarge
-        </p>
-    </div>
-</div>
 
         <div class="figma-cta-wrap" style="margin-bottom: 80px;">
             <a href="https://www.figma.com/design/gnpraRQ9Zz12d8F9IZdpqm/PROJECT-1-3FSD3?node-id=0-1&t=4iKkPCLkhrjfIyaK-1" target="_blank" rel="noopener noreferrer" class="figma-cta">
@@ -360,12 +365,12 @@
     </main>
 
     <footer class="w-full py-16 bg-surface border-t border-outline-variant/20">
-        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex flex-col items-center md:items-start gap-4">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start gap-3 md:gap-4">
                 <span class="font-label-md text-label-md font-bold text-primary">Michael Timothy Sipahutar</span>
                 <p class="font-body-md text-body-md text-on-surface-variant">© 2026 Michael Timothy Sipahutar. Crafted with intentionality.</p>
             </div>
-            <div class="flex gap-8">
+            <div class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8">
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/michaeltimothy02" target="_blank">GitHub</a>
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/michael-timothy-sipahutar-7912ba395" target="_blank">LinkedIn</a>
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.instagram.com/michael.timothys/" target="_blank">Instagram</a>

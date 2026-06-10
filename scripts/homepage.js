@@ -27,6 +27,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
+
 const themeToggle = document.querySelector('button[data-icon="dark_mode"]');
 const html = document.documentElement;
 
@@ -39,6 +40,27 @@ themeToggle.addEventListener('click', () => {
     const isDark = html.classList.contains('dark');
     themeToggle.textContent = isDark ? 'light_mode' : 'dark_mode';
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+}
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+});
+
+document.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+    }
 });
 
 const filterButtons = document.querySelectorAll('#projects .flex.gap-4 button');
@@ -99,7 +121,6 @@ filterButtons.forEach(btn => {
             document.querySelectorAll('#projects a[data-category]').forEach(card => {
                 const categories = card.getAttribute('data-category').split(' ');
                 if (categories.includes(filterKey)) {
-                    // Clone card dan reset col-span
                     const clone = card.cloneNode(true);
                     clone.className = clone.className
                         .replace(/lg:col-span-\d+/g, '')
@@ -126,8 +147,8 @@ contactForm.addEventListener('submit', async (e) => {
     });
 
     const fields = [
-        { el: inputs[0], val: name, msg: 'Full name is required.' },
-        { el: inputs[1], val: email, msg: 'Email address is required.' },
+        { el: inputs[0], val: name,    msg: 'Full name is required.' },
+        { el: inputs[1], val: email,   msg: 'Email address is required.' },
         { el: inputs[2], val: subject, msg: 'Subject is required.' },
         { el: inputs[3], val: message, msg: 'Message is required.' },
     ];
@@ -156,7 +177,7 @@ contactForm.addEventListener('submit', async (e) => {
         hasError = true;
     }
 
-    if (hasError) return; 
+    if (hasError) return;
 
     btn.innerHTML = 'Sending... <span class="material-symbols-outlined text-[18px]">hourglass_empty</span>';
     btn.disabled = true;

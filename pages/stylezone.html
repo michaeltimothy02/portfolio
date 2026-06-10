@@ -84,6 +84,7 @@
                     fontSize: {
                         "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
                         "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-lg-mobile": ["30px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
                         "label-lg": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
                         "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
                         "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
@@ -103,8 +104,11 @@
     <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/30 h-20">
         <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
             <a class="font-headline-md text-headline-md text-primary tracking-tight" href="../pages/homepage.html">Michael Portfolio</a>
-            <div class="flex items-center gap-8">
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block" href="../pages/homepage.html#projects">← All Projects</a>
+            <div class="flex items-center gap-4 md:gap-8">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 hidden sm:block" href="../pages/homepage.html#projects">← All Projects</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200 sm:hidden flex items-center gap-1" href="../pages/homepage.html#projects">
+                    <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                </a>
                 <button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" id="dark-toggle">dark_mode</button>
             </div>
         </div>
@@ -114,20 +118,20 @@
 
     <main class="pt-20">
 
-        <header class="max-w-3xl mx-auto px-6 pt-16 pb-12">
-            <div class="flex items-center gap-2 mb-8 text-on-surface-variant">
+        <header class="max-w-3xl mx-auto px-6 pt-12 md:pt-16 pb-10 md:pb-12">
+            <div class="flex items-center gap-2 mb-6 md:mb-8 text-on-surface-variant">
                 <a href="../pages/homepage.html#projects" class="font-label-md text-label-md hover:text-secondary transition-colors">Projects</a>
                 <span class="text-outline-variant">/</span>
                 <span class="font-label-md text-label-md text-on-surface">Stylezone</span>
             </div>
 
-            <div class="flex flex-wrap gap-2 mb-6">
+            <div class="flex flex-wrap gap-2 mb-5 md:mb-6">
                 <span class="tag">WAP Project</span>
                 <span class="tag">Website</span>
                 <span class="tag">Fashion E-Commerce</span>
             </div>
 
-            <h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-5 md:mb-6 leading-tight">
                 Stylezone — Fashion E-Commerce Website
             </h1>
 
@@ -242,11 +246,7 @@
 
         <div class="max-w-[680px] mx-auto px-6 reveal" style="margin-bottom: 64px;">
             <div class="erd-wrap rounded-[16px] overflow-hidden border border-outline-variant/30">
-                <img
-                    src="../assets/images/ERD_stylezone.png"
-                    alt="Database ERD"
-                    class="w-full block"
-                />
+                <img src="../assets/images/ERD_stylezone.png" alt="Database ERD" class="w-full block" />
                 <div class="erd-zoom-hint">
                     <span class="material-symbols-outlined">zoom_in</span>
                     Click to enlarge
@@ -262,47 +262,33 @@
 
         <div class="carousel-wrapper reveal">
             <p class="carousel-section-label">Customer Interface</p>
-
             <div class="carousel-outer">
                 <button class="carousel-arrow carousel-arrow-left" id="arrow-left-customer" aria-label="Previous">
                     <span class="material-symbols-outlined">arrow_back_ios</span>
                 </button>
-
                 <div class="carousel-card">
                     <div class="carousel-slides" id="customer-carousel">
-                        <div class="carousel-slide active"
-                             data-label="Homepage"
-                             data-desc="The main storefront showcasing featured and latest fashion products with a clean, browsable layout.">
+                        <div class="carousel-slide active" data-label="Homepage" data-desc="The main storefront showcasing featured and latest fashion products with a clean, browsable layout.">
                             <img src="../assets/images/stylezone_.png" alt="Homepage" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Product Page"
-                             data-desc="Browse all available fashion products with filtering options by category and gender.">
+                        <div class="carousel-slide" data-label="Product Page" data-desc="Browse all available fashion products with filtering options by category and gender.">
                             <img src="../assets/images/product_stylezone.png" alt="Product Page" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Product Detail"
-                             data-desc="Detailed product view with description, price, available sizes, and stock information.">
+                        <div class="carousel-slide" data-label="Product Detail" data-desc="Detailed product view with description, price, available sizes, and stock information.">
                             <img src="../assets/images/detail_product_stylezone.png" alt="Product Detail" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Cart"
-                             data-desc="Shopping cart displaying selected items with quantity controls and order summary.">
+                        <div class="carousel-slide" data-label="Cart" data-desc="Shopping cart displaying selected items with quantity controls and order summary.">
                             <img src="../assets/images/cart_stylezone_.png" alt="Cart" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Checkout"
-                             data-desc="Checkout page with delivery details and payment method selection.">
+                        <div class="carousel-slide" data-label="Checkout" data-desc="Checkout page with delivery details and payment method selection.">
                             <img src="../assets/images/checkout_stylezone.png" alt="Checkout" />
                         </div>
                     </div>
                 </div>
-
                 <button class="carousel-arrow carousel-arrow-right" id="arrow-right-customer" aria-label="Next">
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </button>
             </div>
-
             <div class="carousel-footer">
                 <div class="carousel-dots" id="dots-customer">
                     <button class="dot active" data-index="0"></button>
@@ -324,47 +310,33 @@
 
         <div class="carousel-wrapper reveal" style="margin-bottom: 48px;">
             <p class="carousel-section-label">Admin Interface</p>
-
             <div class="carousel-outer">
                 <button class="carousel-arrow carousel-arrow-left" id="arrow-left-admin" aria-label="Previous">
                     <span class="material-symbols-outlined">arrow_back_ios</span>
                 </button>
-
                 <div class="carousel-card">
                     <div class="carousel-slides" id="admin-carousel">
-                        <div class="carousel-slide active"
-                             data-label="Admin Dashboard"
-                             data-desc="Overview of key metrics including total products, users, and recent orders.">
+                        <div class="carousel-slide active" data-label="Admin Dashboard" data-desc="Overview of key metrics including total products, users, and recent orders.">
                             <img src="../assets/images/admin_dashboard_stylezone.png" alt="Admin Dashboard" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Product Management"
-                             data-desc="Full CRUD interface for adding, editing, and deleting fashion products.">
+                        <div class="carousel-slide" data-label="Product Management" data-desc="Full CRUD interface for adding, editing, and deleting fashion products.">
                             <img src="../assets/images/product_stylezone_.png" alt="Product Management" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="User Management"
-                             data-desc="Manage customer and admin accounts including roles and account status.">
+                        <div class="carousel-slide" data-label="User Management" data-desc="Manage customer and admin accounts including roles and account status.">
                             <img src="../assets/images/users_management_stylezone.png" alt="User Management" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Order Management"
-                             data-desc="View all orders with status tracking and detailed order information.">
+                        <div class="carousel-slide" data-label="Order Management" data-desc="View all orders with status tracking and detailed order information.">
                             <img src="../assets/images/order_management_sylezone.png" alt="Order Management" />
                         </div>
-                        <div class="carousel-slide"
-                             data-label="Profile Settings"
-                             data-desc="Admin profile page for updating personal information and credentials.">
+                        <div class="carousel-slide" data-label="Profile Settings" data-desc="Admin profile page for updating personal information and credentials.">
                             <img src="../assets/images/admin_stylezone.png" alt="Profile Settings" />
                         </div>
                     </div>
                 </div>
-
                 <button class="carousel-arrow carousel-arrow-right" id="arrow-right-admin" aria-label="Next">
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </button>
             </div>
-
             <div class="carousel-footer">
                 <div class="carousel-dots" id="dots-admin">
                     <button class="dot active" data-index="0"></button>
@@ -394,12 +366,12 @@
     </main>
 
     <footer class="w-full py-16 bg-surface border-t border-outline-variant/20">
-        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex flex-col items-center md:items-start gap-4">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start gap-3 md:gap-4">
                 <span class="font-label-md text-label-md font-bold text-primary">Michael Timothy Sipahutar</span>
                 <p class="font-body-md text-body-md text-on-surface-variant">© 2026 Michael Timothy Sipahutar. Crafted with intentionality.</p>
             </div>
-            <div class="flex gap-8">
+            <div class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8">
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://github.com/michaeltimothy02" target="_blank">GitHub</a>
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.linkedin.com/in/michael-timothy-sipahutar-7912ba395" target="_blank">LinkedIn</a>
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="https://www.instagram.com/michael.timothys/" target="_blank">Instagram</a>

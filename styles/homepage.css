@@ -25,9 +25,20 @@ html {
     scroll-behavior: smooth;
 }
 
-
 nav a::after {
     display: none !important;
+}
+
+#mobileMenu:not(.hidden) {
+    display: flex;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+html.dark .hamburger-line {
+    background-color: #e2e8f0;
 }
 
 html.dark body {
@@ -59,7 +70,6 @@ html.dark #about span {
     color: #94a3b8;
     border-color: rgba(148, 163, 184, 0.2);
 }
-
 
 html.dark #projects {
     background-color: #0f172a;
@@ -93,7 +103,6 @@ html.dark #contact p,
 html.dark #contact a:not(.bg-primary) {
     color: #94a3b8;
 }
-
 
 html.dark #contact form {
     background-color: #0f172a;
@@ -205,7 +214,6 @@ html.dark #projects a.border {
     color: #e2e8f0;
 }
 
-
 #projects a.border.rounded-full {
     transition: all 0.2s ease;
 }
@@ -266,4 +274,18 @@ html.dark #home .text-on-surface-variant {
 
 html.dark #projects span.text-primary {
     color: #9ecfd1;
+}
+
+html.dark #mobileMenu {
+    background-color: rgba(15, 23, 42, 0.97);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #mobileMenu a {
+    color: #94a3b8;
+}
+
+html.dark #mobileMenu a.bg-primary {
+    background-color: #356668;
+    color: #ffffff;
 }
