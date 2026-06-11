@@ -99,7 +99,6 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
         lbImg.classList.remove('grabbing');
     });
 
-    // Touch pinch-to-zoom
     let lastTouchDist = null;
     lbInner.addEventListener('touchstart', (e) => {
         if (e.touches.length === 2) {
