@@ -489,6 +489,32 @@ html.dark .carousel-slide img {
     box-shadow: 0 2px 14px rgba(22, 40, 57, 0.14);
 }
 
+/* Expand carousel control tap targets to ~44px for touch, without changing
+   their visual size (responsive touch-target requirement). */
+.carousel-arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+}
+
+.dot {
+    position: relative;
+}
+
+.dot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+}
+
 .carousel-arrow:hover {
     background: #356668;
     color: white;

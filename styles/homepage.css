@@ -289,3 +289,44 @@ html.dark #mobileMenu a.bg-primary {
     background-color: #356668;
     color: #ffffff;
 }
+
+/* Internship Experience section (homepage cards) */
+#internship-cards img {
+    transition: transform 0.5s ease;
+}
+
+#internship-cards a:hover img {
+    transform: scale(1.05);
+}
+
+html.dark #internship-experience {
+    background-color: #0f172a;
+}
+
+html.dark #internship-experience h2,
+html.dark #internship-experience h3 {
+    color: #e2e8f0;
+}
+
+html.dark #internship-experience p,
+html.dark #internship-experience .text-on-surface-variant {
+    color: #94a3b8;
+}
+
+html.dark #internship-experience .bg-surface-container,
+html.dark #internship-experience .bg-surface-container-high {
+    background-color: #1e293b;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark #internship-experience .text-secondary {
+    color: #9ecfd1;
+}
+
+/* Comfortable ~44px touch target for the mobile menu button (visible only below md) */
+@media (max-width: 767px) {
+    #mobileMenuBtn {
+        width: 44px;
+        height: 44px;
+    }
+}

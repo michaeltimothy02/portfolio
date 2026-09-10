@@ -82,8 +82,8 @@
             "unit": "8px",
             "container-max": "1200px",
             "gutter": "24px",
-            "section-padding-mobile": "64px",
-            "section-padding-desktop": "120px"
+            "section-padding-mobile": "48px",
+            "section-padding-desktop": "80px"
           },
           "fontFamily": {
             "label-md": ["Manrope"],
@@ -208,6 +208,7 @@
                 <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">Prototyping</span>
                 <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">PHP</span>
                 <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">CodeIgniter 4 (CI4)</span>
+                <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">Laravel</span>
                 <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">Database Management Systems (DBMS)</span>
                 <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">Flutter</span>
                 <span class="bg-secondary-container/10 text-on-secondary-container px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-md text-label-md border border-secondary-container/20">Version Control</span>
@@ -215,6 +216,19 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding-mobile md:py-section-padding-desktop" id="internship-experience">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="mb-12 md:mb-16">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-3 md:mb-4">Internship Experience</h2>
+          <p class="text-on-surface-variant max-w-xl">A look at the companies I've interned with and the real-world projects I contributed to along the way.</p>
+        </div>
+
+        <div id="internship-cards" class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <!-- Internship cards are rendered dynamically by scripts/experience.js from scripts/data.js -->
         </div>
       </div>
     </section>
@@ -391,6 +405,8 @@
     </div>
   </footer>
 
+  <script src="../scripts/data.js"></script>
+  <script src="../scripts/experience.js"></script>
   <script src="../scripts/homepage.js"></script>
 </body>
 
